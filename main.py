@@ -75,7 +75,7 @@ for item in cluster:
     logging.info('branch: ' + branch + ' | revision: ' + revision)
 
 
-########### Валидация JSON файла ###########
+########### Функция алидации JSON файла ###########
 def validateJSON(jsonData):  # проверка json на валидность
     try:
         json.loads(jsonData)
@@ -84,7 +84,7 @@ def validateJSON(jsonData):  # проверка json на валидность
     return True
 
   
-########### Запись в файл с оставлением бекапа ###########
+########### Запись в файл, бекап, валидация ###########
 if validateJSON(json.dumps(file_json)) == True:
     os.rename('JSON.json', f'JSON.json.back{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')
     with open('JSON.json', 'w') as outfile:
