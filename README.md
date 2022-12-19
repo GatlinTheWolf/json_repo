@@ -1,2 +1,2 @@
 # json_repo
-Python paramico json
+Python paramiko json
