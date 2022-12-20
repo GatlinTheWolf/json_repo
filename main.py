@@ -7,7 +7,7 @@ from logging.handlers import RotatingFileHandler
 import sys
 
 ########### Логирование ###########
-logging.basicConfig(handlers=[RotatingFileHandler("logs/test.log", maxBytes=500000, backupCount=10)],
+logging.basicConfig(handlers=[RotatingFileHandler("logs/logfile.log", maxBytes=500000, backupCount=10)],
                     level=logging.INFO, format='%(asctime)s.%(msecs)03d [%(levelname)s]: %(message)s',
                     datefmt='%d-%m-%Y %H:%M:%S')
 logging.info('Starting!')
