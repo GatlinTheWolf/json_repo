@@ -17,6 +17,7 @@ try:  # Открытие файла JSON.json
         file_json = json.load(f)
 except:
     logging.warning('Can not read JSON')
+    print('Can not read JSON')
     sys.exit()
 
 cluster = file_json['hosts']
