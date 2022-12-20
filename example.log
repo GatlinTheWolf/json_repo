@@ -1,0 +1,9 @@
+19-12-2022 14:12:48.033 [INFO]: Starting!
+19-12-2022 14:12:48.059 [INFO]: Connected (version 2.0, client OpenSSH_8.9p1)
+19-12-2022 14:12:48.255 [INFO]: Authentication (publickey) successful!
+19-12-2022 14:12:48.255 [INFO]: Connected to the host: gatlin-server and the user: gatlin
+19-12-2022 14:12:48.352 [INFO]: branch: main | revision: 2
+19-12-2022 14:13:01.635 [WARNING]: Can not connect to the host: gatlin1-server and the user: gatlin1
+19-12-2022 14:13:01.636 [INFO]: branch: None | revision: None
+19-12-2022 14:13:01.642 [INFO]: file update successfully
+19-12-2022 14:13:01.643 [INFO]: Complete!
