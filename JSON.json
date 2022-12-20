@@ -1,14 +1,20 @@
 {
-    "hosts": {
-        "EU-CLUSTER": {
-            "title": "Eu cluster discription",
-            "host": "eu1-vm-host",
-            "user": "euuser"
-        },
-        "NA-CLUSTER": {
-            "title": "Na cluster description",
-            "host": "na1-vm-host",
-            "user": "nauser"
-        }
+  "hosts": {
+    "EU-CLUSTER": {
+      "title": "Eu cluster discription",
+      "host": "eu1-vm-host",
+      "user": "euuser",
+      "branch": "None",
+      "revision": "None",
+      "isReach": "No"
+    },
+    "NA-CLUSTER": {
+      "title": "Na cluster description",
+      "host": "na1-vm-host",
+      "user": "nauser",
+      "branch": "None",
+      "revision": "None",
+      "isReach": "No"
     }
+  }
 }
