@@ -87,7 +87,7 @@ def validateJSON(jsonData):  # проверка json на валидность
 
 ########### Запись в файл с оставлением бекапа ###########
 if validateJSON(json.dumps(file_json)) == True:
-    print('valid')
+    print('JSON is valid')
     os.rename('JSON.json', f'JSON.json.back{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')
     with open('JSON.json', 'w') as outfile:
         json.dump(file_json, outfile, indent=2)
