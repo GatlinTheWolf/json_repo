@@ -82,8 +82,8 @@ for item in cluster:
     logging.info('branch: ' + branch + ' | revision: ' + revision)
     ssh.close()
 
-########### Запись в файл с оставлением бекапа ###########
-os.rename('JSON.json', f'JSON.json.back{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')
+########### Запись в файл ###########
+os.rename('JSON.json', f'JSON.json.back{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')  # бекап JSON
 with open('JSON.json', 'w') as outfile:
     json.dump(file_json, outfile, indent=2)
     outfile.close()
