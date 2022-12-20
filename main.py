@@ -80,6 +80,7 @@ for item in cluster:
         file_json['hosts'][f'{_cluster}']['isReach'] = isReached
 
     logging.info('branch: ' + branch + ' | revision: ' + revision)
+    ssh.close()
 
 
 ########### Валидация JSON файла ###########
