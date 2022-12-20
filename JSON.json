@@ -4,9 +4,9 @@
       "title": "Eu cluster discription",
       "host": "gatlin-server",
       "user": "gatlin",
-      "branch": "main",
-      "revision": "2",
-      "isReach": "Yes"
+      "branch": "None",
+      "revision": "None",
+      "isReach": "No"
     },
     "AU-CLUSTER": {
       "title": "Eu cluster discription",

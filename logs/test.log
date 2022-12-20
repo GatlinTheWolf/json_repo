@@ -280,3 +280,10 @@
 19-12-2022 14:13:35.203 [INFO]: branch: None | revision: None
 19-12-2022 14:13:35.205 [INFO]: file update successfully
 19-12-2022 14:13:35.205 [INFO]: Complete!
+20-12-2022 05:07:17.477 [INFO]: Starting!
+20-12-2022 05:07:19.552 [WARNING]: Can not connect to the host: gatlin-server and the user: gatlin
+20-12-2022 05:07:19.553 [INFO]: branch: None | revision: None
+20-12-2022 05:07:21.868 [WARNING]: Can not connect to the host: gatlin1-server and the user: gatlin1
+20-12-2022 05:07:21.870 [INFO]: branch: None | revision: None
+20-12-2022 05:07:21.876 [INFO]: File update successfully
+20-12-2022 05:07:21.877 [INFO]: Complete!
