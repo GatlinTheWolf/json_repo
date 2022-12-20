@@ -1,0 +1,52 @@
+19-12-2022 14:00:03.859 [INFO]: Starting!
+19-12-2022 14:00:03.878 [INFO]: Connected (version 2.0, client OpenSSH_8.9p1)
+19-12-2022 14:00:04.033 [INFO]: Authentication (publickey) successful!
+19-12-2022 14:00:04.034 [INFO]: Connected to the host: gatlin-server and the user: gatlin
+19-12-2022 14:00:04.146 [INFO]: branch: main | revision: 2
+19-12-2022 14:00:17.430 [INFO]: Can not connect to the host: gatlin1-server and the user: gatlin1
+19-12-2022 14:00:17.430 [INFO]: branch: None | revision: None
+19-12-2022 14:00:17.432 [INFO]: file update successfully
+19-12-2022 14:00:17.432 [INFO]: Complete!
+19-12-2022 14:04:45.998 [INFO]: Starting!
+19-12-2022 14:04:46.024 [INFO]: Connected (version 2.0, client OpenSSH_8.9p1)
+19-12-2022 14:04:46.176 [INFO]: Authentication (publickey) successful!
+19-12-2022 14:04:46.176 [INFO]: Connected to the host: gatlin-server and the user: gatlin
+19-12-2022 14:04:46.259 [INFO]: branch: main | revision: 2
+19-12-2022 14:04:59.541 [WARNING]: Can not connect to the host: gatlin1-server and the user: gatlin1
+19-12-2022 14:04:59.542 [INFO]: branch: None | revision: None
+19-12-2022 14:04:59.548 [INFO]: file update successfully
+19-12-2022 14:04:59.549 [INFO]: Complete!
+19-12-2022 14:12:48.033 [INFO]: Starting!
+19-12-2022 14:12:48.059 [INFO]: Connected (version 2.0, client OpenSSH_8.9p1)
+19-12-2022 14:12:48.255 [INFO]: Authentication (publickey) successful!
+19-12-2022 14:12:48.255 [INFO]: Connected to the host: gatlin-server and the user: gatlin
+19-12-2022 14:12:48.352 [INFO]: branch: main | revision: 2
+19-12-2022 14:13:01.635 [WARNING]: Can not connect to the host: gatlin1-server and the user: gatlin1
+19-12-2022 14:13:01.636 [INFO]: branch: None | revision: None
+19-12-2022 14:13:01.642 [INFO]: file update successfully
+19-12-2022 14:13:01.643 [INFO]: Complete!
+19-12-2022 14:13:21.661 [INFO]: Starting!
+19-12-2022 14:13:21.682 [INFO]: Connected (version 2.0, client OpenSSH_8.9p1)
+19-12-2022 14:13:21.832 [INFO]: Authentication (publickey) successful!
+19-12-2022 14:13:21.833 [INFO]: Connected to the host: gatlin-server and the user: gatlin
+19-12-2022 14:13:21.920 [INFO]: branch: main | revision: 2
+19-12-2022 14:13:35.203 [WARNING]: Can not connect to the host: gatlin1-server and the user: gatlin1
+19-12-2022 14:13:35.203 [INFO]: branch: None | revision: None
+19-12-2022 14:13:35.205 [INFO]: file update successfully
+19-12-2022 14:13:35.205 [INFO]: Complete!
+19-12-2022 16:15:34.224 [INFO]: Starting!
+19-12-2022 16:15:36.275 [WARNING]: Can not connect to the host: gatlin-server and the user: gatlin
+19-12-2022 16:15:36.275 [INFO]: branch: None | revision: None
+19-12-2022 16:15:49.629 [WARNING]: Can not connect to the host: gatlin1-server and the user: gatlin1
+19-12-2022 16:15:49.630 [INFO]: branch: None | revision: None
+19-12-2022 16:15:49.634 [INFO]: file update successfully
+19-12-2022 16:15:49.635 [INFO]: Complete!
+20-12-2022 04:44:05.008 [INFO]: Starting!
+20-12-2022 04:44:05.009 [WARNING]: Can not read JSON
+20-12-2022 04:45:14.410 [INFO]: Starting!
+20-12-2022 04:45:16.485 [WARNING]: Can not connect to the host: gatlin-server and the user: gatlin
+20-12-2022 04:45:16.485 [INFO]: branch: None | revision: None
+20-12-2022 04:45:18.795 [WARNING]: Can not connect to the host: gatlin1-server and the user: gatlin1
+20-12-2022 04:45:18.796 [INFO]: branch: None | revision: None
+20-12-2022 04:45:18.800 [INFO]: file update successfully
+20-12-2022 04:45:18.801 [INFO]: Complete!
