@@ -14,3 +14,10 @@
 20-12-2022 05:07:21.870 [INFO]: branch: None | revision: None
 20-12-2022 05:07:21.876 [INFO]: File update successfully
 20-12-2022 05:07:21.877 [INFO]: Complete!
+20-12-2022 06:19:13.467 [INFO]: Starting!
+20-12-2022 06:19:15.751 [WARNING]: Can not connect to the host: eu1-vm-host and the user: euuser
+20-12-2022 06:19:15.752 [INFO]: branch: None | revision: None
+20-12-2022 06:19:18.032 [WARNING]: Can not connect to the host: na1-vm-host and the user: nauser
+20-12-2022 06:19:18.032 [INFO]: branch: None | revision: None
+20-12-2022 06:19:18.035 [INFO]: File update successfully
+20-12-2022 06:19:18.036 [INFO]: Complete!
