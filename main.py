@@ -44,6 +44,11 @@ for item in cluster:
         isReached = 'No'
         branch = 'None'
         revision = 'None'
+        file_json['hosts'][f'{_cluster}']['branch'] = branch
+        file_json['hosts'][f'{_cluster}']['revision'] = revision
+        file_json['hosts'][f'{_cluster}']['isReach'] = isReached
+        print(f'Stop looking for a Git and SVN in host {_host}')
+        break
 
     ########### Проверка веток и ревизий ###########
     try:
@@ -94,6 +99,6 @@ if validateJSON(json.dumps(file_json)) == True:
         outfile.close()
     logging.info('File update successfully')
 else:
-    print('Invalid JSON ')
+    print('Invalid JSON')
 
 logging.info('Complete!')
