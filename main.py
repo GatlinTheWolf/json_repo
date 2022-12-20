@@ -12,8 +12,7 @@ logging.basicConfig(handlers=[RotatingFileHandler("logs/test.log", maxBytes=5000
                     datefmt='%d-%m-%Y %H:%M:%S')
 logging.info('Starting!')
 
-########### Открытие файла ###########
-try:
+try:  # Открытие файла JSON.json
     with open('JSON.json') as f:
         file_json = json.load(f)
 except:
@@ -25,42 +24,11 @@ for item in cluster:
     _cluster = item
     _host = cluster[item]['host']
     _user = cluster[item]['user']
-    _password = '5549'  # _user
+    _password = _user
     isReached = ''
 
-    # if 'win' in platform:
-    # print('windows')
-    # winuser = os.getlogin()
-    # if os.path.file(f'C:\Users\{winuser}/.ssh/id_rsa'):
-    #    try:
-    #        ssh = paramiko.SSHClient()
-    #        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    #        ssh.load_system_host_keys()
-    #        privkey = paramiko.RSAKey.from_private_key_file(f'C:\Users\{winuser}/.ssh/id_rsa')
-    #        ssh.connect(
-    #            hostname=_host,
-    #            username=_user,
-    #            pkey=privkey,
-    #        )
-    #    except:
-    #        logging.info("except")
-
-    # else:
-    # print('linux')
-    # if os.path.file('~/.ssh/id_rsa'):
-    #    try:
-    #        ssh = paramiko.SSHClient()
-    #        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    #        ssh.load_system_host_keys()
-    #        privkey = paramiko.RSAKey.from_private_key_file('~/.ssh/id_rsa')
-    #        ssh.connect(
-    #            hostname=_host,
-    #            username=_user,
-    #            pkey=privkey,
-    #        )
-    #    except:
-    #        logging.info("except")
-    try:
+########### Подключение к хосту ###########
+    try:  # если удалось подключиться
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(
@@ -71,28 +39,27 @@ for item in cluster:
         isReached = 'Yes'
         logging.info(f'Connected to the host: {_host} and the user: {_user}')
 
-    # если хост не достигнут
-    except:
-        logging.warning('Can not connect to the host: ' + _host + ' and the user: ' + _user)
+    except:  # если не удалось подключиться
+        logging.warning(f'Can not connect to the host: {_host} and the user: {_user}')
         isReached = 'No'
         branch = 'None'
         revision = 'None'
 
     ########### Проверка веток и ревизий ###########
     try:
-        try:
-            stdin, stdout, stderr = ssh.exec_command('cd ~/git/test-repo && svn info --show-item url')  # папка ~/bw/
+        try:  # eсли SVN
+            stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && svn info --show-item url')  # папка ~/bw/
             branch = stdout.readlines()[0].rstrip()
 
-            stdin, stdout, stderr = ssh.exec_command('cd ~/git/test-repo && svn info --show-item revision')  # папка ~/bw/
+            stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && svn info --show-item revision')  # папка ~/bw/
             revision = stdout.readlines()[0].rstrip()
             ssh.close()
 
-        except:
-            stdin, stdout, stderr = ssh.exec_command('cd ~/git/test-repo && git rev-parse --abbrev-ref HEAD')  # папка ~/bw/
+        except:  # eсли GIT
+            stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && git rev-parse --abbrev-ref HEAD')  # папка ~/bw/
             branch = stdout.readlines()[0].rstrip()
 
-            stdin, stdout, stderr = ssh.exec_command('cd ~/git/test-repo && git rev-list --count HEAD')  # папка ~/bw/
+            stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && git rev-list --count HEAD')  # папка ~/bw/
             revision = stdout.readlines()[0].rstrip()
             ssh.close()
 
@@ -100,8 +67,7 @@ for item in cluster:
         file_json['hosts'][f'{_cluster}']['revision'] = revision
         file_json['hosts'][f'{_cluster}']['isReach'] = isReached
 
-    #если Git и SVN отсутствуют
-    except:
+    except:  # если Git и SVN отсутствуют
         branch = 'None'
         revision = 'None'
         file_json['hosts'][f'{_cluster}']['branch'] = branch
@@ -119,17 +85,6 @@ def validateJSON(jsonData):  # проверка json на валидность
         return False
     return True
 
-'''
-try:
-    json.dumps(json.loads(file_json))
-    os.rename('JSON.json', f'JSON.json.back{datetime.datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')
-    with open('JSON.json', 'w') as outfile:
-        json.dump(file_json, outfile)
-        outfile.close()
-except:
-    print('error:')
-'''
-
 ########### Запись в файл с оставлением бекапа ###########
 if validateJSON(json.dumps(file_json)) == True:
     print('valid')
@@ -139,6 +94,6 @@ if validateJSON(json.dumps(file_json)) == True:
         outfile.close()
     logging.info('File update successfully')
 else:
-    print('invalid JSON ')
+    print('Invalid JSON ')
 
 logging.info('Complete!')

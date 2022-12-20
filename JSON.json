@@ -1,20 +1,14 @@
 {
-  "hosts": {
-    "EU-CLUSTER": {
-      "title": "Eu cluster discription",
-      "host": "gatlin-server",
-      "user": "gatlin",
-      "branch": "None",
-      "revision": "None",
-      "isReach": "No"
-    },
-    "AU-CLUSTER": {
-      "title": "Eu cluster discription",
-      "host": "gatlin1-server",
-      "user": "gatlin1",
-      "branch": "None",
-      "revision": "None",
-      "isReach": "No"
+    "hosts": {
+        "EU-CLUSTER": {
+            "title": "Eu cluster discription",
+            "host": "eu1-vm-host",
+            "user": "euuser"
+        },
+        "NA-CLUSTER": {
+            "title": "Na cluster description",
+            "host": "na1-vm-host",
+            "user": "nauser"
+        }
     }
-  }
 }
