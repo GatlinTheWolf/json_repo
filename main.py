@@ -82,24 +82,11 @@ for item in cluster:
     logging.info('branch: ' + branch + ' | revision: ' + revision)
     ssh.close()
 
-
-########### Валидация JSON файла ###########
-def validateJSON(jsonData):  # проверка json на валидность
-    try:
-        json.loads(jsonData)
-    except ValueError:
-        return False
-    return True
-
 ########### Запись в файл с оставлением бекапа ###########
-if validateJSON(json.dumps(file_json)) == True:
-    print('JSON is valid')
-    os.rename('JSON.json', f'JSON.json.back{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')
-    with open('JSON.json', 'w') as outfile:
-        json.dump(file_json, outfile, indent=2)
-        outfile.close()
+os.rename('JSON.json', f'JSON.json.back{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')
+with open('JSON.json', 'w') as outfile:
+    json.dump(file_json, outfile, indent=2)
+    outfile.close()
     logging.info('File update successfully')
-else:
-    print('Invalid JSON')
 
 logging.info('Complete!')
