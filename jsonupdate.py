@@ -32,7 +32,7 @@ def main():
         isReached = ''
 
     ########### Подключение к хосту ###########
-        try:  # если удалось подключиться
+        try:  # попытка подключения
             ssh = paramiko.SSHClient()
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             ssh.connect(
@@ -44,7 +44,7 @@ def main():
             logging.info(f'Connected to host: {_host} and user: {_user}')
             print(f'Connected to host: {_host} and user: {_user}')
 
-        except:  # если не удалось подключиться
+        except:  # если подключение не удалось
             isReached = 'No'
             branch = 'None'
             revision = 'None'
@@ -57,7 +57,7 @@ def main():
 
         ########### Проверка веток и ревизий ###########
         try:
-            try:  # eсли SVN
+            try:  # поиск SVN
                 stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && svn info --show-item url')
                 branch = stdout.readlines()[0].rstrip()
 
@@ -65,7 +65,7 @@ def main():
                 revision = stdout.readlines()[0].rstrip()
                 ssh.close()
 
-            except:  # eсли GIT
+            except:  # поиск GIT
                 stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && git rev-parse --abbrev-ref HEAD')
                 branch = stdout.readlines()[0].rstrip()
 
