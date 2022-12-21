@@ -13,6 +13,7 @@ logging.basicConfig(handlers=[RotatingFileHandler("logs/logfile.log", maxBytes=5
                     datefmt='%d-%m-%Y %H:%M:%S')
 logging.info('Starting!')
 
+
 def main():
     try:  # Открытие файла JSON.json
         with open('JSON.json') as f:
@@ -87,7 +88,7 @@ def main():
 
     ########### Валидация и запись JSON файла ###########
     try:
-        os.rename('JSON.json', f'JSON.json.back{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')
+        os.rename('JSON.json', f'JSON.json.back{datetime.now().strftime("%d-%m-%Y_%H-%M-%S")}')  # бекап JSON файла
         with open('JSON.json', 'w') as outfile:
             json.dump(file_json, outfile, indent=2)
             outfile.close()
