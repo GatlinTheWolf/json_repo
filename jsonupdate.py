@@ -57,18 +57,18 @@ def main():
         ########### Проверка веток и ревизий ###########
         try:
             try:  # eсли SVN
-                stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && svn info --show-item url')  # папка ~/bw/
+                stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && svn info --show-item url')
                 branch = stdout.readlines()[0].rstrip()
 
-                stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && svn info --show-item revision')  # папка ~/bw/
+                stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && svn info --show-item revision')
                 revision = stdout.readlines()[0].rstrip()
                 ssh.close()
 
             except:  # eсли GIT
-                stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && git rev-parse --abbrev-ref HEAD')  # папка ~/bw/
+                stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && git rev-parse --abbrev-ref HEAD')
                 branch = stdout.readlines()[0].rstrip()
 
-                stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && git rev-list --count HEAD')  # папка ~/bw/
+                stdin, stdout, stderr = ssh.exec_command('cd ~/bw/ && git rev-list --count HEAD')
                 revision = stdout.readlines()[0].rstrip()
                 ssh.close()
 
