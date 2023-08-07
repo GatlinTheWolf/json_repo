@@ -17,13 +17,13 @@ There is a list of users and hosts, followed by "JSON"
     }
 }
 """  
-1.Authorization to ssh host can occur either by ssh key or by password, which equals user, that is, for user1 user, user1 password, if user has no key.  
-2.Each user in the directory ~/bw/ may have a working copy of git or subversion. You must write a script that. 
-3.Runs on all JSON users.  
-4.Collects information about the working copy, namely  
-    A) For git, it learns which branch the working copy is following and which revision it is on.  
-    B) for subversion knows which branch is in the working copy and which revision.  
-5.Adds to the original JSON collected information from points 4.A, 4.B.
+    1.Authorization to ssh host can occur either by ssh key or by password, which equals user, that is, for user1 user, user1 password, if user has no key.  
+    2.Each user in the directory ~/bw/ may have a working copy of git or subversion. You must write a script that. 
+    3.Runs on all JSON users.  
+    4.Collects information about the working copy, namely  
+        A) For git, it learns which branch the working copy is following and which revision it is on.  
+        B) for subversion knows which branch is in the working copy and which revision.  
+    5.Adds to the original JSON collected information from points 4.A, 4.B.
 
 Python paramiko json  
 
