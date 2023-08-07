@@ -16,7 +16,7 @@ There is a list of users and hosts, followed by "JSON"
         }
     }
 }
-""" 
+"""  
 1.Authorization to ssh host can occur either by ssh key or by password, which equals user, that is, for user1 user, user1 password, if user has no key.  
 2.Each user in the directory ~/bw/ may have a working copy of git or subversion. You must write a script that. 
 3.Runs on all JSON users.  
