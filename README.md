@@ -3,7 +3,7 @@ Python paramiko json
 
 There is a list of users and hosts, followed by "JSON"
 """
-{
+{    
     "hosts": {
         "EU-CLUSTER": {
             "title": "Eu cluster discription",
